@@ -1,0 +1,24 @@
+<odoo>
+  <data>
+       <record id="view_account_move_move_form" model="ir.ui.view">
+            <field name="name">view.account.view.move.form</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+              <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="ware_id"/>
+              </xpath>
+            </field>
+       </record>
+       <record id="view_account_company_move_form" model="ir.ui.view">
+            <field name="name">view.account.view.company.form</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+              <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="transfer_account_id"/>
+              </xpath>
+            </field>
+        </record>
+  </data>
+</odoo>

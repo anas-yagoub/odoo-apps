@@ -1,0 +1,15 @@
+<odoo>
+    <data>
+         	<!-- View inheritance for Partner Model-->
+        <record id="view_partner_form_inherited_account_move_list" model="ir.ui.view">
+            <field name="name">Inherited Form View for account move</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_payment_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="communication"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

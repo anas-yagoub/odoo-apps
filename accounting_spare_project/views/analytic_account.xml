@@ -1,0 +1,38 @@
+<odoo>
+    <data>
+
+           	<!-- View inheritance for Partner Model-->
+        <record id="inherited_account_analytic_move_form" model="ir.ui.view">
+            <field name="name">Inherited form View for account move</field>
+            <field name="model">account.analytic.account</field>
+            <field name="inherit_id" ref="analytic.view_account_analytic_account_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='code']" position="before">
+                    <field name="ware_id"/>
+                </xpath>
+            </field>
+        </record>
+          	<!-- View inheritance for Partner Model-->
+        <record id="inherited_account_analytic_move_list" model="ir.ui.view">
+            <field name="name">Inherited list View for account move</field>
+            <field name="model">account.analytic.account</field>
+            <field name="inherit_id" ref="analytic.view_account_analytic_account_list"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="ware_id"/>
+                </xpath>
+            </field>
+        </record>
+
+<!--        <record id="inherited_account_analytic_line_move_list" model="ir.ui.view">-->
+<!--            <field name="name">Inherited list View for account move</field>-->
+<!--            <field name="model">account.analytic.line</field>-->
+<!--            <field name="inherit_id" ref="analytic.view_account_analytic_line_tree"/>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <xpath expr="//field[@name='ref']" position="after">-->
+<!--                    <field name="ware_id"/>-->
+<!--                </xpath>-->
+<!--            </field>-->
+<!--        </record>-->
+    </data>
+</odoo>

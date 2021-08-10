@@ -1,0 +1,75 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="loan_form_view">
+            <field name="name">loan.form</field>
+            <field name="model">hr.loan</field>
+            <field name="arch" type="xml">
+                <form string="loan Form">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="employee_id"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="loan"/>
+                                <field name="wage"/>
+                                <field name="loan_date"/>
+                                <field name="total_wage"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+         <record model="ir.ui.view" id="loan_tree_view">
+            <field name="name">loan.tree</field>
+            <field name="model">hr.loan</field>
+            <field name="arch" type="xml">
+                <tree string="loan List">
+                    <field name="employee_id"/>
+                    <field name="loan"/>
+                    <field name="loan_date"/>
+                </tree>
+            </field>
+         </record>
+        <record model="ir.actions.act_window" id="loan_list_action">
+            <field name="name">Loans</field>
+            <field name="res_model">hr.loan</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Loans" id="Loan_rent_pro" parent="hr_expense.menu_hr_expense_root"
+              action="loan_list_action"/>
+
+    </data>
+
+
+
+<!--	<record id="hr_expense_view_2" model="ir.ui.view">-->
+<!--		<field name="name">hr.loan.view2</field>-->
+<!--		<field name="model">hr.loan</field>-->
+<!--        <field name="priority" eval="20"/>-->
+<!--		<field name="inherit_id" ref="hr_expense.hr_expense_view_form"/>-->
+<!--		<field name="mode">primary</field>-->
+<!--		<field name="arch" type="xml">-->
+<!--			<xpath expr="//field[@name='wage']" position="attributes">-->
+<!--                <attribute name="invisible">1</attribute>-->
+<!--			</xpath>-->
+<!--			<xpath expr="//field[@name='total_wage']" position="attributes">-->
+<!--                <attribute name="invisible">1</attribute>-->
+<!--			</xpath>-->
+<!--			<xpath expr="//field[@name='employee_id']" position="after">-->
+<!--			<field name="loan"/>-->
+<!--		    </xpath>-->
+<!--		</field>-->
+<!--	</record>-->
+
+<!--    <record model="ir.actions.act_window" id="action_rent_pro">-->
+<!--        <field name="name">Loans</field>-->
+<!--        <field name="view_mode">form</field>-->
+<!--        <field name="view_id" ref="hr_expense_view_2" />-->
+<!--    </record>-->
+
+</odoo>
